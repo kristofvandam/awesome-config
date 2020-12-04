@@ -3,7 +3,7 @@ local awful = require("awful")
 local apps = {}
 
 apps.default = {
-   terminal = "kitty",
+   terminal = "alacritty",
    lock = "i3lock",
    screenshot = "scrot -e 'mv $f ~/Pictures/ 2>/dev/null'",
    filebrowser = "nautilus"
