@@ -10,10 +10,7 @@ apps.default = {
 }
 
 local run_on_start_up = {
-    "picom",
-    "redshift",
-    "unclutter"
- }
+}
 
  function apps.autostart()
     for _, app in ipairs(run_on_start_up) do
@@ -27,5 +24,3 @@ local run_on_start_up = {
  end
 
  apps.autostart()
-
- 

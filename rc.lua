@@ -14,7 +14,8 @@ require('preferences.layouts')
 require('modules.client')
 require('modules.titlebar')
 require('modules.panel')
--- require('modules.sidepanel')
+require('modules.sidepanel')
+require('modules.appdrawer')
 
 require('bindings.keys')
 -- BELOW NEEDS CLEANUP --

@@ -7,8 +7,13 @@ local assets     = filesystem.get_configuration_dir() .. '/theme/assets/'
 
 local theme      = {}
 
+-- Icon
+theme.icon_theme = 'Papirus-Dark'
+
 -- Font
-theme.font = 'ProggyCleanTTCE Nerd Font Mono 12'
+-- theme.font = 'ProggyCleanTTCE Nerd Font Mono 12'
+theme.font = 'VictorMono Nerd Font Mono 10'
+-- theme.font = 'Iosevka Nerd Font Mono 10'
 
 -- Misc
 -- -- Wallpaper Image

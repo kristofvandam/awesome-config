@@ -32,7 +32,10 @@ awful.keyboard.append_global_keybindings({
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "p", function()
+                menubar.show()
+                screen.emit_signal('appdrawer::open', awful.screen.focused())
+              end,
               {description = "show the menubar", group = "launcher"}),
 })
 
