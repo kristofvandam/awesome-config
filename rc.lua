@@ -15,7 +15,7 @@ require('modules.client')
 require('modules.titlebar')
 require('modules.panel')
 require('modules.sidepanel')
-require('modules.appdrawer')
+-- require('modules.appdrawer')
 
 require('bindings.keys')
 -- BELOW NEEDS CLEANUP --
@@ -66,7 +66,9 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "open terminal", terminal },
+                                    { "firefox", "firefox" },
+                                    { "files", "nautilus" }
                                   }
                         })
 

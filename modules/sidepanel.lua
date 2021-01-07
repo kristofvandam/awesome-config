@@ -5,6 +5,8 @@ local timer = require("gears.timer")
 local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
 
+local thumbnail = require('modules.thumbnail')
+
 screen.connect_signal("request::desktop_decoration", function(s)
 
     local dock = wibox({
@@ -13,7 +15,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch = false,
         width = dpi(64),
         height = s.workarea.height,
-        visible = false,
+        visible = true,
         y = 48
     })
     s.mytasklist = awful.widget.tasklist {
