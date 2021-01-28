@@ -25,7 +25,7 @@ theme.useless_gap = 10
 
 -- Colors
 theme.color_transparent = '#00000000'
-theme.background = '#1a1a1a'
+theme.background = '#1F242588'
 
 theme.fg_normal = '#ffffffff'
 theme.fg_focus = '#e4e4e4'
@@ -35,12 +35,30 @@ theme.bg_normal = theme.background
 theme.bg_focus = '#5a5a5a'
 theme.bg_urgent = '#3F3F3F'
 
+-- Tooltip
+theme.tooltip_bg = theme.background
+theme.tooltip_border_width = 0
+theme.tooltip_shape = gears.shape.rounded_rect
+
+-- Notifications
+theme.notification_bg = theme.background
+theme.notification_border_width = 0
+theme.notification_border_color = "#FFFFFFFF"
+theme.notification_shape = gears.shape.rounded_rect
+
+-- Menu
+theme.menu_height = 40
+theme.menu_bg_focus = theme.background
+theme.menu_bg_normal = theme.background
+
 -- Taglist
 theme.taglist_bg_empty = theme.background .. '00'
 theme.taglist_bg_occupied =  '#2a2a2a' .. 'ff'
 theme.taglist_bg_urgent = '#E91E63' .. '99'
 theme.taglist_bg_focus = '#3a3a3a'
 theme.taglist_spacing = dpi(0)
+
+theme.apps_slack = assets .. 'titlebar/buttons/button_red.png'
 
 -- Tasklist
 theme.tasklist_bg_normal = theme.background .. '99'

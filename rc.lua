@@ -15,6 +15,7 @@ require('modules.client')
 require('modules.titlebar')
 require('modules.panel')
 require('modules.sidepanel')
+--require('modules.dock')
 -- require('modules.appdrawer')
 
 require('bindings.keys')
