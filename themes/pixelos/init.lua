@@ -12,12 +12,12 @@ theme.icon_theme = 'Papirus-Dark'
 
 -- Font
 -- theme.font = 'ProggyCleanTTCE Nerd Font Mono 12'
-theme.font = 'VictorMono Nerd Font Mono 10'
--- theme.font = 'Iosevka Nerd Font Mono 10'
+-- theme.font = 'VictorMono Nerd Font Mono 10'
+theme.font = 'Iosevka Nerd Font Mono 10'
 
 -- Misc
 -- -- Wallpaper Image
-theme.wallpaper = assets .. 'wallpaper/wallpaper4.jpg'
+theme.wallpaper = assets .. 'wallpaper/wallpaper5.jpg'
 -- -- Solid Color
 gears.wallpaper.set("#20BEC6")
 
@@ -46,6 +46,9 @@ theme.notification_border_width = 0
 theme.notification_border_color = "#FFFFFFFF"
 theme.notification_shape = gears.shape.rounded_rect
 
+-- Panel
+theme.panel_height = 38
+
 -- Menu
 theme.menu_height = 40
 theme.menu_bg_focus = theme.background
@@ -53,9 +56,9 @@ theme.menu_bg_normal = theme.background
 
 -- Taglist
 theme.taglist_bg_empty = theme.background .. '00'
-theme.taglist_bg_occupied =  '#2a2a2a' .. 'ff'
+theme.taglist_bg_occupied =  '#ffffff' .. '11'
 theme.taglist_bg_urgent = '#E91E63' .. '99'
-theme.taglist_bg_focus = '#3a3a3a'
+theme.taglist_bg_focus = '#ffffff' .. '22'
 theme.taglist_spacing = dpi(0)
 
 theme.apps_slack = assets .. 'titlebar/buttons/button_red.png'
@@ -91,11 +94,11 @@ theme.titlebar_image_bottom = assets .. 'titlebar/titlebar_bottom.png'
 theme.titlebar_bgimage_normal = theme.titlebar_middle
 
 -- Titlebar Buttons
+theme.titlebar_button_spacing       = dpi(2.5)
 theme.titlebar_button_margin_left   = dpi(2.5)
 theme.titlebar_button_margin_right  = dpi(3)
 theme.titlebar_button_margin_top    = dpi(3)
 theme.titlebar_button_margin_bottom = dpi(3)
-theme.titlebar_button_spacing       = dpi(2.5)
 
 theme.titlebar_button_close                   = assets .. 'titlebar/buttons/button_red.png'
 theme.titlebar_button_close_hover             = assets .. 'titlebar/buttons/button_red_hover.png'

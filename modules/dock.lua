@@ -16,26 +16,26 @@ local box = require("modules.dock.dockbox")
 
 return wibox.widget {
     {
-        nil, 
+        nil,
         {
-            nil, 
+            nil,
             {
-                browser, 
-                fileexplorer, 
-                terminal, 
-                intellij, 
+                browser,
+                fileexplorer,
+                terminal,
+                intellij,
                 gimp,
                 spotify,
                 spacing = dpi(8),
                 layout = wibox.layout.fixed.vertical
-            }, 
+            },
             nil,
             expand = "none",
             layout = wibox.layout.align.vertical
         },
-        nil, 
-        expand = "none", 
+        nil,
+        expand = "none",
         layout = wibox.layout.align.horizontal
-    }, 
-    widget = wibox.container.background, 
+    },
+    widget = wibox.container.background,
 }

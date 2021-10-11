@@ -5,8 +5,6 @@ local timer = require("gears.timer")
 local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
 
-local thumbnail = require('modules.thumbnail')
-
 screen.connect_signal("request::desktop_decoration", function(s)
 
     local entries = {
@@ -35,7 +33,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width = dpi(64),
         height = s.workarea.height,
         visible = false,
-        y = 48
+        y = beautiful.panel_height
     })
 
 
@@ -173,7 +171,7 @@ dock:setup {
   }
 }
 
-local dock_trigger = awful.wibox({
+local dock_trigger = awful.wibar({
   position = "left",
   width = 1,
   bg = "#00000000",
@@ -182,11 +180,12 @@ local dock_trigger = awful.wibox({
   visible = true
 })
 
-local dock_hide_timer = timer({ timeout = 1})
+local dock_hide_timer = gears.timer({ timeout = 1})
 
 dock_trigger:geometry({ width = 5, height = s.workarea.height })
 dock_hide_timer:connect_signal("timeout", function() dock.visible = false; dock_hide_timer:stop() end )
 dock_trigger:connect_signal("mouse::enter", function() dock.visible = true end)
 dock:connect_signal("mouse::enter", function() if dock_hide_timer.started then dock_hide_timer:stop() end end)
 dock:connect_signal("mouse::leave", function() dock_hide_timer:again() end)
-    end)
+
+end)

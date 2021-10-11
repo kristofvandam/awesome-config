@@ -1,9 +1,12 @@
 local awful = require('awful')
+local lain = require('../lain')
 
 tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
         awful.layout.suit.tile,
-        -- awful.layout.suit.floating,
+        awful.layout.suit.floating,
+        lain.layout.termfair,
+        lain.layout.centerwork,
         -- awful.layout.suit.tile.left,
         -- awful.layout.suit.tile.bottom,
         -- awful.layout.suit.tile.top,

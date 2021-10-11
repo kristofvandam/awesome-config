@@ -1,4 +1,3 @@
-local vicious = require("../vicious")
 local wibox   = require("wibox")
 local gears   = require("gears")
 require("../modules.widget")
