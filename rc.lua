@@ -19,7 +19,7 @@ require('modules.client')
 require('modules.titlebar')
 require('modules.panel')
 -- require('modules.sidepanel')
--- require('modules.notifications')
+require('modules.notifications')
 -- require('modules.dock')
 -- require('modules.appdrawer')
 
@@ -93,8 +93,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibar
 
 
-
 screen.connect_signal("request::wallpaper", function(s)
+
+
     -- Wallpaper
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper

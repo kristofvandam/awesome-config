@@ -39,70 +39,81 @@ modkey = "Mod4"
 screen.connect_signal("request::desktop_decoration", function(s)
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top" ,height = beautiful.panel_height, screen = s })
+  s.mywibox = wibox({
+    ontop = true,
+    visible = true,
+    width = s.workarea.width - (beautiful.useless_gap * 4),
+    height = beautiful.panel_height,
+    y = beautiful.useless_gap * 2,
+    x = beautiful.useless_gap * 2,
+    screen = s,
+    shape = gears.shape.rounded_rect
+  })
 
-  -- Each screen has its own tag table.
-  awful.tag({ "main", "term", "dev", "browse", "social", "misc" }, s, awful.layout.layouts[1])
+  s.mywibox:struts({top = beautiful.panel_height + (beautiful.useless_gap * 2)})
 
-  -- Create a taglist widget
-  s.mytaglist = awful.widget.taglist {
-    screen  = s,
-    filter  = awful.widget.taglist.filter.all,
-    widget_template = {
-      {
+    -- Each screen has its own tag table.
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+
+    -- Create a taglist widget
+    s.mytaglist = awful.widget.taglist {
+      screen  = s,
+      filter  = awful.widget.taglist.filter.all,
+      widget_template = {
         {
           {
-            id     = 'text_role',
-            widget = wibox.widget.textbox,
+            {
+              id     = 'text_role',
+              widget = wibox.widget.textbox,
+            },
+            layout = wibox.layout.fixed.horizontal,
           },
-          layout = wibox.layout.fixed.horizontal,
+          left  = 18,
+          right = 18,
+          widget = wibox.container.margin
         },
-        left  = 18,
-        right = 18,
-        widget = wibox.container.margin
+        id     = 'background_role',
+        widget = wibox.container.background,
       },
-      id     = 'background_role',
-      widget = wibox.container.background,
-    },
-    buttons = {
-      awful.button({ }, 1, function(t) t:view_only() end),
-      awful.button({ modkey }, 1, function(t)
-        if client.focus then
-          client.focus:move_to_tag(t)
-        end
-      end),
-      awful.button({ }, 3, awful.tag.viewtoggle),
-      awful.button({ modkey }, 3, function(t)
-        if client.focus then
-          client.focus:toggle_tag(t)
-        end
-      end),
-      awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-      awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end),
-    }
-  }
-
-  -- Add widgets to the wibox
-  s.mywibox.widget = {
-    layout = wibox.layout.stack,
-    {
-      layout = wibox.layout.align.horizontal,
-      { -- Left widgets
-        layout = wibox.layout.fixed.horizontal,
-        s.mytaglist,
-      },
-      nil,
-      {
-        layout = wibox.layout.fixed.horizontal,
-        cpu,
-        mem,
-        -- net,
-        bat,
-        -- sysload,
-        -- wibox.widget.systray(),
+      buttons = {
+        awful.button({ }, 1, function(t) t:view_only() end),
+        awful.button({ modkey }, 1, function(t)
+          if client.focus then
+            client.focus:move_to_tag(t)
+          end
+        end),
+        awful.button({ }, 3, awful.tag.viewtoggle),
+        awful.button({ modkey }, 3, function(t)
+          if client.focus then
+            client.focus:toggle_tag(t)
+          end
+        end),
+        awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+        awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end),
       }
-    },
-    { -- Right widgets
+    }
+
+    -- Add widgets to the wibox
+    s.mywibox.widget = {
+        layout = wibox.layout.stack,
+        {
+          layout = wibox.layout.align.horizontal,
+          { -- Left widgets
+          layout = wibox.layout.fixed.horizontal,
+          s.mytaglist,
+        },
+        nil,
+        {
+          layout = wibox.layout.fixed.horizontal,
+          cpu,
+          mem,
+          -- net,
+          bat,
+          -- sysload,
+          -- wibox.widget.systray(),
+        }
+      },
+      { -- Right widgets
       layout = wibox.container.place,
       valign = "center",
       halign = "center",

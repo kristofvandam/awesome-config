@@ -36,8 +36,19 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "p", function()
-                menubar.show()
-                screen.emit_signal('appdrawer::open', awful.screen.focused())
+                function script_path()
+                   local str = debug.getinfo(2, "S").source:sub(2)
+                   return str:match("(.*/)")
+                end
+                os.execute('rofi -show drun -config ' .. script_path() .. '../modules/appdrawer/drun.rasi')
+              end,
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "o", function()
+                function script_path()
+                   local str = debug.getinfo(2, "S").source:sub(2)
+                   return str:match("(.*/)")
+                end
+                os.execute('rofi -show combi -config ' .. script_path() .. '../modules/appdrawer/combi.rasi')
               end,
               {description = "show the menubar", group = "launcher"}),
 })
