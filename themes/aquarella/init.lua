@@ -22,6 +22,7 @@ theme.wallpaper = assets .. 'wallpaper/wallpaper1.jpg'
 gears.wallpaper.set("#20BEC6")
 
 theme.useless_gap = 10
+theme.master_width_factor = 0.60
 
 -- Colors
 theme.color_transparent = '#00000000'

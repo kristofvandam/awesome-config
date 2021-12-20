@@ -35,6 +35,7 @@ awful.keyboard.append_global_keybindings({
               {description = "open a terminal floating", group = "launcher"}),
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
+    awful.key({ }, "Print", function () awful.util.spawn("flameshot gui") end), 
     awful.key({ modkey }, "p", function()
                 function script_path()
                    local str = debug.getinfo(2, "S").source:sub(2)
